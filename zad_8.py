@@ -2,6 +2,7 @@ from typing import Optional
 import argparse
 import requests
 
+
 class Brewery:
     def __init__(self, id: str, name: str, brewery_type: str, address_1: str, address_2: str, address_3: str, city: str,
                  state_province: str, postal_code: str, country: str, longitude: str, latitude: str, phone: str,
