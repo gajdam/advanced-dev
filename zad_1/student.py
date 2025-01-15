@@ -10,8 +10,13 @@ class Student:
         return f"{self.name} {self.marks}"
 
 
-student = Student('Maciek', 55)
-student2 = Student('Norbert', 49)
+def main():
+    student = Student("Maciek", 55)
+    student2 = Student("Norbert", 49)
 
-print(student.is_passed())
-print(student2.is_passed())
+    print(student.is_passed())
+    print(student2.is_passed())
+
+
+if __name__ == "__main__":
+    main()
