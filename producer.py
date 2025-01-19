@@ -113,13 +113,15 @@ def get_image_url():
 
 
 @app.route("/process-image", methods=["POST"])
-def process_image_endpoint():
+def process_image_endpoint(UPLOAD_FOLDER=r'C:\Users\gajda\OneDrive\Pulpit\images-test'):
     task_id = generate_task_id()
 
     file = request.files["file"]
-    image_data = file.read()
+    filename = file.filename
+    file_path = os.path.join(UPLOAD_FOLDER, f"{task_id}_{filename}")
+    file.save(file_path)
 
-    new_task(task_id, image_data)
+    new_task(task_id, file_path)
 
     return jsonify({"task_id": task_id}), 202
 

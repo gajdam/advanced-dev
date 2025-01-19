@@ -96,7 +96,7 @@ def callback(ch, method, properties, body):
     print(f" [x] Done processing image: {image_path} with task id: {task_id}")
 
 
-channel.basic_qos(prefetch_count=6)
+channel.basic_qos(prefetch_count=1)
 channel.basic_consume(queue="image_queue", on_message_callback=callback)
 
 print(" [*] Waiting for messages...")
